@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Портфолио</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Подключение React и Babel -->
+    <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    
+    <!-- Сами компоненты -->
+    <script type="text/babel">
+      const Header = () => (
+        <header id="header">
+          <span className="avatar"><img src="images/avatar.png" alt="" /></span>
+          <h1>Это <strong>Амир Эркабаев</strong> студент ЗБ-ПИ21-2</h1>
+          <ul className="icons">
+            <li><a href="#" className="icon style2 fa-twitter"><span className="label">Twitter</span></a></li>
+            <li><a href="#" className="icon style2 fa-facebook"><span className="label">Facebook</span></a></li>
+            <li><a href="#" className="icon style2 fa-instagram"><span className="label">Instagram</span></a></li>
+            <li><a href="#" className="icon style2 fa-500px"><span className="label">500px</span></a></li>
+            <li><a href="#" className="icon style2 fa-envelope-o"><span className="label">Email</span></a></li>
+          </ul>
+        </header>
+      );
+
+      const Thumbnail = ({ link, src, title }) => (
+        <a href={link}>
+          <img src={src} alt="" />
+          <h3>{title}</h3>
+        </a>
+      );
+
+      const Thumbnails = () => (
+        <section className="thumbnails">
+          <div>
+            <Thumbnail link="images/fulls/01.png" src="images/thumbs/01.png" title="Web-программирование" />
+            <Thumbnail link="images/fulls/02.png" src="images/thumbs/02.png" title="Использование HTML, CSS" />
+          </div>
+          <div>
+            <Thumbnail link="images/fulls/03.png" src="images/thumbs/03.png" title="Выполнил Амир Эркабаев" />
+            <Thumbnail link="images/fulls/04.png" src="images/thumbs/04.png" title="Использование Javascript" />
+          </div>
+          <div>
+            <Thumbnail link="images/fulls/06.png" src="images/thumbs/06.png" title="Группа ЗБ-ПИ21-2" />
+            <Thumbnail link="images/fulls/07.png" src="images/thumbs/07.png" title="Использование React" />
+          </div>
+        </section>
+      );
+
+      const Main = () => (
+        <section id="main">
+          <Thumbnails />
+        </section>
+      );
+
+      const Footer = () => (
+        <footer id="footer">
+          <p>Финансовый Университет при Правительстве Российской Федерации</p>
+        </footer>
+      );
+
+      const App = () => (
+        <div id="wrapper">
+          <Header />
+          <Main />
+          <Footer />
+        </div>
+      );
+
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+    
+    <!-- Подключение дополнительных скриптов -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
